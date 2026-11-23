@@ -93,14 +93,6 @@ Em desenvolvimento não precisa configurar nada. O Vite pega todas as chamadas q
 | `npm run preview` | Abre localmente a versão gerada pelo build |
 | `npm run lint`    | Procura problemas no código                |
 
-## Configuração para produção
-
-O endereço da API vem da variável `VITE_API_URL`. Em desenvolvimento ela fica vazia. Para gerar o build apontando para uma API real, copie o `.env.example` para `.env` e preencha:
-
-```env
-VITE_API_URL=http://localhost:8080
-```
-
 Nesse caso o back-end precisa liberar CORS para o endereço onde o front estiver hospedado.
 
 ## Rotas da API usadas
