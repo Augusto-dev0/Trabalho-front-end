@@ -93,6 +93,7 @@ Em desenvolvimento não precisa configurar nada. O Vite pega todas as chamadas q
 | `npm run preview` | Abre localmente a versão gerada pelo build |
 | `npm run lint`    | Procura problemas no código                |
 
+<<<<<<< HEAD
 ## Configuração para produção
 
 O endereço da API vem da variável `VITE_API_URL`. Em desenvolvimento ela fica vazia. Para gerar o build apontando para uma API real, copie o `.env.example` para `.env` e preencha:
@@ -101,6 +102,8 @@ O endereço da API vem da variável `VITE_API_URL`. Em desenvolvimento ela fica 
 VITE_API_URL=http://localhost:8080
 ```
 
+=======
+>>>>>>> origin/main
 Nesse caso o back-end precisa liberar CORS para o endereço onde o front estiver hospedado.
 
 ## Rotas da API usadas
@@ -155,9 +158,15 @@ A ideia central é o componente `RecursoPage`. Ele faz a listagem, a busca, a or
 - **Erro de CORS depois do build:** a `VITE_API_URL` aponta para uma origem que o back-end não liberou.
 - **Porta 5173 ocupada:** o Vite escolhe outra porta sozinho. Use a que aparecer no terminal.
 
+<<<<<<< HEAD
 ## Login e cadastro
 
 - Telas: `/login` e `/cadastro`. Todas as outras rotas exigem login (`RotaProtegida`); sem token o usuário volta para o login.
 - `src/api/auth.js` chama `POST /Auth/login` (envia `email` e `senha`, espera um JSON com `token`) e `POST /Auth/cadastro` (envia `nome`, `email` e `senha`). Se as rotas ou campos do back-end forem outros, ajuste as constantes no topo desse arquivo.
 - O token fica no `localStorage` e o `http.js` o envia em `Authorization: Bearer`. O botão **Sair** apaga o token.
 - No back-end, `/Auth/**` precisa estar liberado (`permitAll`) no Spring Security.
+=======
+## O que ainda falta
+
+O cliente HTTP já envia o token JWT no cabeçalho `Authorization` quando existe um guardado, mas ainda não há tela de login. A autenticação fica como próximo passo.
+>>>>>>> origin/main
