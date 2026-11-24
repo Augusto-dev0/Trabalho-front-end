@@ -40,11 +40,19 @@ function mensagemPadrao(status) {
   return `Erro inesperado (${status}).`
 }
 
+<<<<<<< HEAD
+export async function http(caminho, { method = 'GET', body, params, semToken = false } = {}) {
+  const headers = { Accept: 'application/json' }
+  if (body !== undefined) headers['Content-Type'] = 'application/json'
+
+  const token = semToken ? null : tokenStorage.get()
+=======
 export async function http(caminho, { method = 'GET', body, params } = {}) {
   const headers = { Accept: 'application/json' }
   if (body !== undefined) headers['Content-Type'] = 'application/json'
 
   const token = tokenStorage.get()
+>>>>>>> origin/main
   if (token) headers.Authorization = `Bearer ${token}`
 
   let resposta
@@ -69,7 +77,11 @@ export async function http(caminho, { method = 'GET', body, params } = {}) {
   }
 
   if (!resposta.ok) {
+<<<<<<< HEAD
+    if (resposta.status === 401 && !semToken) tokenStorage.clear()
+=======
     if (resposta.status === 401) tokenStorage.clear()
+>>>>>>> origin/main
     throw new ApiError(resposta.status, corpo?.message ?? mensagemPadrao(resposta.status), corpo?.fields ?? [])
   }
   return corpo

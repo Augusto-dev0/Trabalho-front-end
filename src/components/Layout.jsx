@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+import { NavLink, Outlet, useNavigate } from 'react-router-dom'
+import { logout } from '../api/auth.js'
+=======
 import { NavLink, Outlet } from 'react-router-dom'
+>>>>>>> origin/main
 
 const LINKS = [
   { para: '/categorias', texto: 'Categorias' },
@@ -7,6 +12,16 @@ const LINKS = [
 ]
 
 export default function Layout() {
+<<<<<<< HEAD
+  const navigate = useNavigate()
+
+  function sair() {
+    logout()
+    navigate('/login', { replace: true })
+  }
+
+=======
+>>>>>>> origin/main
   return (
     <>
       <header className="topo">
@@ -18,6 +33,12 @@ export default function Layout() {
             </NavLink>
           ))}
         </nav>
+<<<<<<< HEAD
+        <button type="button" className="btn sair" onClick={sair}>
+          Sair
+        </button>
+=======
+>>>>>>> origin/main
       </header>
       <main className="conteudo">
         <Outlet />
